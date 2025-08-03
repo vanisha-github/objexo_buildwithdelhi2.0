@@ -1,0 +1,184 @@
+/* Background same as index */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('../images/pexels-krisof-1252890.jpg') no-repeat center center/cover;
+  color: white;
+  height:100vh;
+  background-size: cover;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 30px;
+}
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #80d0ff;
+  font-weight: bold;
+}
+.nav-links a.active
+{ color: #9a7dff; }
+.nav-links a:hover {color: #d1c2ff}
+
+/* Container */
+.contact-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.contact-container h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  color: #9cd6ff;
+  margin-bottom: 10px;
+}
+.tagline {
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.contact-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Info Section (Left) */
+.info-section {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.info-card {
+  background: rgba(20,20,35,0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+.info-card .icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.info-card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #9cd6ff;
+}
+
+
+/* Social Links inside info card */
+.info-card .social-links {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.info-card .social-links a {
+  color: #80d0ff;
+  text-decoration: none;
+  margin: 0 4px;
+}
+.info-card .social-links a:hover {
+  color: #9a7dff;
+}
+
+
+
+/* Form Section (Right) */
+.form-section {
+  flex: 2;
+  min-width: 300px;
+  background: rgba(20,20,35,0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+.form-section h2 {
+  color: #9cd6ff;
+  margin-bottom: 5px;
+}
+.form-desc {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form .row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+form input,
+form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+}
+form textarea {
+  resize: vertical;
+  margin-bottom: 15px;
+}
+form button {
+  background: #7a5fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+form button:hover { background: #5b45d6; }
+.form-note {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 8px;
+}
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;  /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  z-index: 1000;
+   /* Make sure it stays on top */
+}
+.chatbot-icon:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.chatbot-icon img {
+  width: 70px;
+  height: auto;
+  background: white;
+  border-radius: 50%;
+}
+.chatbot-icon img {
+  width: 70px;
+  height: auto;
+  background: white;
+  border-radius: 50%;
+}
+

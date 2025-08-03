@@ -1,0 +1,159 @@
+/* Background and Base Styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('../images/pexels-krisof-1252890.jpg');
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+}
+
+/* Add overlay using pseudo-element */
+body::before {
+  content: "";
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 9, 20, 0.7); /* Adjust opacity here (0.4 = 40%) */
+  z-index: -1;
+}
+
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 30px;
+}
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #80d0ff;
+  font-weight: bold;
+}
+.nav-links a:hover {
+  color: #7a5fff;
+}
+
+/* Main Content */
+.container {
+  margin-top: 80px;
+}
+.badge {
+  background: #7a5fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+h1 {
+    font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  margin: 10px 0;
+}
+h1 span {
+  color: #9cd6ff; /* brighter neon blue for better visibility */
+}
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #e0e0e0; /* softer light gray instead of pure white */
+}
+
+/* Join Button */
+.join {
+  background: #7a5fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+.join:hover {
+  background: #5b45d6;
+}
+
+/* Stats */
+.stats {
+    font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  
+}
+.stats div {
+  margin: 0 20px;
+  font-size: 18px;
+  color: #f0f0f0; /* brighter text for better readability */
+}
+
+/* Login Box (Side Popup) */
+.login-box {
+  position: fixed;
+  top: 20%;
+  right: 20px;
+  width: 300px;
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #7a5fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Inputs and Button */
+.login-box input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.popup-btn {
+  background: #7a5fff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-btn:hover {
+  background: #5b45d6;
+}
+
+.forgot {
+  font-size: 12px;
+  color: #80d0ff;
+  margin-top: 10px;
+}
+.sign{
+  color: #80d0ff;
+}

@@ -1,0 +1,136 @@
+
+/* Background */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('../images/pexels-krisof-1252890.jpg') no-repeat center center/cover;
+  color: white;
+  height:100vh;
+  background-size: cover;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 30px;
+}
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #80d0ff;
+  font-weight: bold;
+}
+.nav-links a.active
+{ color: #9a7dff; }
+.nav-links a:hover {color: #d1c2ff}
+
+/* Container */
+.team-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Team Name */
+.team-container h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #b6a8ff;
+  margin-bottom: 8px;
+}
+
+/* Mission */
+.mission {
+  color: #ccc;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Hackathon Badge */
+.badge {
+  display: inline-block;
+  background: rgba(20,20,35,0.9);
+  color: #9cd6ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(156,214,255,0.3);
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Team Card */
+.team-card {
+  background: rgba(20,20,35,0.9);
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(128,208,255,0.5);
+}
+.team-card img {
+  width: 100px;          /* wider rectangle width */
+  height: 140px;         /* taller rectangle height */
+  border-radius: 8px;    /* small rounded corners (remove circle) */
+  border: 2px solid #9cd6ff;
+  margin-bottom: 10px;
+  object-fit: cover;     /* ensures image scales properly */
+}
+
+.team-card h3 {
+  margin: 5px 0 8px;
+  font-size: 18px;
+  color: #9cd6ff;
+}
+.team-card .social a {
+  text-decoration: none;
+  color: #80d0ff;
+  font-size: 14px;
+}
+.team-card .social a:hover {
+  color: #b6a8ff;
+}
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;  /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  z-index: 1000; /* Make sure it stays on top */
+}
+.chatbot-icon:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.chatbot-icon img {
+  width: 70px;
+  height: auto;
+  background: white;
+  border-radius: 50%;
+}
+

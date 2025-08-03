@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Predict - Space Station Object Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/predict.css" />
+</head>
+<body>
+  <a href="chatbot.html" class="chatbot-icon">
+  <img src="images/ChatGPT Image Aug 3, 2025, 02_14_38 PM.png" alt="Chatbot Icon">
+</a>
+  <!-- Glow Layer for Parallax -->
+  <div class="glow-layer"></div>
+
+  <!-- Navigation -->
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a class="active" href="predict.html">Detect Objects</a>
+    <a href="history.html">Detection Log</a>
+    <a href="our-team.html">Our Team</a>
+    <a href="charts.html">Model Insights</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Extra cosmic background layers -->
+<div class="glow-layer"></div> <!-- existing glow layer for parallax -->
+
+  <!-- Main Layout -->
+  <div class="predict-layout">
+    <!-- Left Panel -->
+    <div class="info-panel">
+      <h2>About AI Detection</h2>
+      <p>This system detects <strong>Toolboxes</strong>, <strong>Oxygen Cylinders</strong>, and <strong>Fire Extinguishers</strong> from uploaded images using YOLOv8.</p>
+      <div class="icon-row">
+        <div class="icon-card toolbox-icon">🧰<span>Toolbox</span></div>
+        <div class="icon-card oxygen-icon">🛢️<span>Oxygen</span></div>
+        <div class="icon-card fire-icon">🧯<span>Fire</span></div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="main-panel">
+      <h1>Upload Image for Prediction</h1>
+      <div class="upload-box">
+        <input type="file" id="imageInput" onchange="previewImage(event)" />
+        <div id="imagePreview" class="image-preview hidden"></div>
+        <button class="predict-btn" onclick="showResults()">Predict</button>
+      </div>
+
+      <!-- Results -->
+      <div class="results hidden" id="results">
+        <div class="result-item toolbox">
+          <h3>Toolboxes</h3>
+          <p class="count" data-count="3">0</p>
+        </div>
+        <div class="result-item oxygen">
+          <h3>Oxygen Cylinders</h3>
+          <p class="count" data-count="2">0</p>
+        </div>
+        <div class="result-item fire">
+          <h3>Fire Extinguishers</h3>
+          <p class="count" data-count="1">0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/predict.js"></script>
+</body>
+</html>

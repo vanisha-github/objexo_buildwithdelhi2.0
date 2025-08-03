@@ -1,0 +1,116 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('../images/pexels-krisof-1252890.jpg') no-repeat center center/cover;
+  color: white;
+  height:100vh;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* overlay for readability */
+  z-index: -1;
+}
+
+/* Nav */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 30px;
+}
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #80d0ff;
+  font-weight: bold;
+}
+.nav-links a.active
+{ color: #9a7dff; }
+.nav-links a:hover {color: #d1c2ff}
+
+
+/* About Container */
+.about-container {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.about-container h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #9cd6ff;
+  margin-bottom: 30px;
+}
+
+/* Card Style */
+.card {
+  background: rgba(20, 20, 35, 0.85); /* solid dark, slight transparency */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Shine Effect */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, transparent 80%);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.card:hover::after {
+  left: 120%;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(128,208,255,0.6);
+}
+
+/* Headers per section */
+.intro h2 { color: #42a5f5; }
+.features h2 { color: #ff7043; }
+.pipeline h2 { color: #7a5fff; }
+
+/* Lists */
+ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;  /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  z-index: 1000; /* Make sure it stays on top */
+  color:white;
+}
+.chatbot-icon:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.chatbot-icon img {
+  width: 70px;
+  height: auto;
+  background: white;
+  border-radius: 50%;
+}

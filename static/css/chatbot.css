@@ -1,0 +1,98 @@
+/* Background same as index */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('../images/pexels-krisof-1252890.jpg') no-repeat center center/cover;
+  color: white;
+  height:100vh;
+  background-size: cover;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+}
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #80d0ff;
+  font-weight: bold;
+}
+.nav-links a.active
+{ color: #9a7dff; }
+.nav-links a:hover {color: #d1c2ff}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: auto;
+  border: 2px solid rgb(112, 6, 252);
+  padding: 20px;
+  background-color: #111;
+  border-radius: 10px;
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  background: #000;
+  border: 1px solid rgb(98, 0, 255);
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.user {
+  color: white;
+}
+
+.bot {
+  color: #0ff;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  background: #222;
+  border: 1px solid rgb(89, 0, 255);
+  color: white;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: rgb(0, 174, 255);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
