@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>History - Space Station Object Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+</head>
+<body>
+  <a href="{{ url_for('chatbot') }}" class="chatbot-icon">
+    <img src="{{ url_for('static', filename='images/ChatGPT Image Aug 3, 2025, 02_14_38 PM.png') }}" alt="Chatbot Icon">
+  </a>
+
+  <!-- Navigation -->
+  <div class="nav-links">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('predict') }}">Detect Objects</a>
+    <a class="active" href="{{ url_for('history') }}">Detection Log</a>
+    <a href="{{ url_for('team') }}">Our Team</a>
+    <a href="{{ url_for('insights') }}">Insights</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </div>
+
+  <div class="history-container">
+    <h1>Detection History</h1>
+
+    <!-- Quick Stats -->
+    <div class="stats-cards">
+      <div class="stat-card toolbox">
+        <h3>Total Toolboxes</h3>
+        <p id="total-toolbox">{{ totals[0] or 0 }}</p>
+      </div>
+      <div class="stat-card oxygen">
+        <h3>Total Oxygen Cylinders</h3>
+        <p id="total-oxygen">{{ totals[1] or 0 }}</p>
+      </div>
+      <div class="stat-card fire">
+        <h3>Total Fire Extinguishers</h3>
+        <p id="total-fire">{{ totals[2] or 0 }}</p>
+      </div>
+    </div>
+
+    <!-- Search / Filter -->
+    <div class="filter-box">
+      <input type="text" placeholder="Search by file name..." id="searchInput" onkeyup="filterTable()" />
+    </div>
+
+    <!-- History Table -->
+    <table class="history-table" id="historyTable">
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>File Name</th>
+          <th class="toolbox">Toolboxes</th>
+          <th class="oxygen">Oxygen Cylinders</th>
+          <th class="fire">Fire Extinguishers</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ row[1] }}</td>
+          <td class="toolbox">{{ row[2] }}</td>
+          <td class="oxygen">{{ row[3] }}</td>
+          <td class="fire">{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/history.js') }}"></script>
+</body>
+</html>

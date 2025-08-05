@@ -1,0 +1,76 @@
+/* Reusable Auth Box Styles */
+.auth-form {
+  background-color: #151627;
+  padding: 30px;
+  height: 55%;
+  border-radius: 15px;
+  width: 290px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5); /* same purple glow */
+  position: relative;
+  margin-top: 90px;
+  margin-bottom:30px;
+  position: fixed;
+  top: 70px;
+  right: 8px;
+}
+
+/* Title */
+.auth-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.auth-input {
+  width: 90%;
+
+  padding: 10px 14px;
+  margin: 10px 0px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  outline: none;
+}
+
+/* Signup Button */
+.auth-btn {
+  background-color: #7b2cbf;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.auth-btn:hover {
+  background-color: #5a189a;
+}
+
+/* Switch text and link */
+.auth-switch-text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.auth-link {
+  color: #4cc9f0;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Hide by default */
+.hidden {
+  display: none;
+}

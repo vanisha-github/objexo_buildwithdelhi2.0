@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Project - Space Station Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+<body>
+  <a href="{{ url_for('chatbot') }}" class="chatbot-icon">
+  <img src="{{ url_for('static', filename='images/ChatGPT Image Aug 3, 2025, 02_14_38 PM.png') }}" alt="Chatbot Icon">
+</a>
+  <!-- Navigation -->
+  <div class="nav-links">
+    <a class="active" href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('predict') }}">Detect Objects</a>
+    <a  href="{{ url_for('history') }}">Detection Log</a>
+    <a href="{{ url_for('team') }}">Our Team</a>
+    <a href="{{ url_for('insights') }}">Insights</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </div>
+
+  <div class="about-container">
+    <h1>About Space Station Detector</h1>
+
+    <!-- Overview Section -->
+    <section class="card intro">
+      <h2>Overview</h2>
+      <p>
+        The Space Station Object Detector leverages AI to identify critical equipment inside space stations — 
+        such as Toolboxes, Oxygen Cylinders, and Fire Extinguishers — ensuring astronaut safety and operational efficiency.
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="card features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Real-time object detection using YOLOv8 neural network</li>
+        <li>Interactive prediction page with visual results</li>
+        <li>Detection history storage with scrollable logs</li>
+        <li>Lightweight, responsive space-themed web UI</li>
+      </ul>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="card pipeline">
+      <h2>How It Works</h2>
+      <p><strong>1. Dataset Preparation:</strong> Synthetic dataset with space equipment under varied lighting and angles.</p>
+      <p><strong>2. Model Training:</strong> YOLOv8 trained for 50 epochs to balance speed and accuracy.</p>
+      <p><strong>3. Prediction:</strong> Uploaded images processed to identify and count equipment instantly.</p>
+      <p><strong>4. History Logging:</strong> Predictions stored for performance analysis and mission tracking.</p>
+    </section>
+  </div>
+</body>
+</html>

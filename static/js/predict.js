@@ -7,27 +7,41 @@ function previewImage(event) {
 }
 
 // === Animate result counts ===
-function animateCounts() {
-  const counts = document.querySelectorAll('.count');
-  counts.forEach(countEl => {
-    const target = +countEl.dataset.count;
-    let current = 0;
-    const increment = target > 10 ? 2 : 1;
-    const timer = setInterval(() => {
-      current += increment;
-      countEl.textContent = current;
-      if (current >= target) clearInterval(timer);
-    }, 100);
-  });
-}
+
 
 // === Show results section ===
-function showResults() {
-  const results = document.getElementById('results');
-  results.classList.remove('hidden');
-  animateCounts();
-  // Allow user to scroll freely (no auto-scroll)
+async function uploadAndPredict() {
+  const fileInput = document.getElementById('imageInput');
+  if (!fileInput.files.length) {
+    alert("Please upload an image first!");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+
+  try {
+    const res = await fetch('/predict', { method: 'POST', body: formData });
+    const data = await res.json();
+
+    console.log("Flask response:", data); // DEBUG
+
+    if (data.error) {
+      alert(data.error);
+      return;
+    }
+
+    document.getElementById('toolbox-count').textContent = data.toolbox ?? 0;
+    document.getElementById('oxygen-count').textContent = data.oxygen ?? 0;
+    document.getElementById('fire-count').textContent = data.fire ?? 0;
+
+    document.getElementById('results').classList.remove('hidden');
+
+  } catch (err) {
+    console.error("Error fetching prediction:", err);
+  }
 }
+
 
 // === Parallax Glow Movement ===
 document.addEventListener('mousemove', (e) => {

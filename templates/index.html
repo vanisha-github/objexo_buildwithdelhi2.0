@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Station Object Detector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+  </head>
+
+  <body>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="badge">🚀 Powered by YOLOv8 + Falcon AI</div>
+      <h1><span>Space Station</span> Object <br /><span>Detector</span></h1>
+      <p class="subtitle">
+        AI-powered detection of critical equipment in space <br />
+        environments using advanced synthetic data training
+      </p>
+      <div class="JoinUs">
+        <button class="join" onclick="toggleLogin()">JOIN US</button>
+      </div>
+
+      <div class="stats">
+        <div><strong>3</strong><br />Object Classes</div>
+        <div><strong>95.2%</strong><br />Accuracy</div>
+        <div><strong style="color: lime">Real-time</strong><br />Detection</div>
+      </div>
+    </div>
+
+    <!-- Popup Container (click outside to close) -->
+
+    <!-- Login Box -->
+    <div id="loginBox" class="login-box hidden">
+      <span class="close-btn" onclick="toggleLogin()">×</span>
+      <div id="loginForm">
+        <h2>Login</h2>
+        <input type="text" placeholder="Enter Username" />
+        <input type="password" placeholder="Enter Password" />
+        <button class="popup-btn"><a href="{{ url_for('home') }}">Login</a></button>
+        <a href="#" class="forgot">Forgot password?</a>
+        <p>
+          Don't have an account?
+          <a class="sign" href="#" id="toSignup">Signup</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <form id="signupForm" class="auth-form hidden">
+      <h2 class="auth-title">Signup</h2>
+
+      <input
+        type="text"
+        id="signupName"
+        class="auth-input"
+        placeholder="Enter Name"
+        required
+      />
+      <input
+        type="email"
+        id="signupEmail"
+        class="auth-input"
+        placeholder="Enter Email"
+        required
+      />
+      <input
+        type="password"
+        id="signupPassword"
+        class="auth-input"
+        placeholder="Enter Password"
+        required
+      />
+
+      <button type="submit" class="auth-btn">Sign Up</button>
+
+      <p class="auth-switch-text">
+        Already have an account?
+        <a href="#" id="toLogin" class="auth-link">Login</a>
+      </p>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </body>
+</html>
