@@ -1,3 +1,8 @@
+#if needed like y/n or >>>>>> then  exit()
+#conda activate yolov8
+#pip install ultralytics flask
+
+
 from flask import Flask, request, jsonify, render_template
 from ultralytics import YOLO
 from PIL import Image
